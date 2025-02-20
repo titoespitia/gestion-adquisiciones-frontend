@@ -1,0 +1,65 @@
+/* 🎨 Contenedor principal */
+.page-container {
+  text-align: left;
+  padding: 80px;
+  background: linear-gradient(to bottom, #cce5ff, #ffffff);
+  min-height: 100vh;
+}
+
+/* Título */
+h2 {
+  font-size: 35px;
+  font-weight: bold;
+  color: #004aad;
+  margin-bottom: 25px;
+  text-align: center;
+}
+
+.sin-registros {
+  text-align: center;
+  font-style: italic;
+  color: #666;
+  padding: 20px;
+  background-color: #f8f9fa;
+}
+
+
+/* 🏗️ Contenedor de la tabla */
+.table-container {
+  margin-top: 30px;
+  display: flex;
+  justify-content: center;
+}
+
+/* 📊 Estilos de la tabla */
+table {
+  width: 90%;
+  border-collapse: collapse;
+  background: white;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+/* 🔹 Encabezados de la tabla */
+th {
+  background-color: #004aad;
+  color: white;
+  padding: 12px;
+  font-weight: bold;
+  font-size: 14px;
+  text-align: center;
+}
+
+/* 🔲 Celdas */
+td {
+  padding: 12px;
+  font-size: 14px;
+  text-align: center;
+  border-bottom: 1px solid #ddd;
+}
+
+/* 🟦 Alternar colores en filas */
+tbody tr:nth-child(even) {
+  background-color: #f2f2f2;
+}

@@ -1,0 +1,36 @@
+<div class="page-container">
+  <!-- Botón de Volver -->
+  <button class="btn btn-primary volver-btn" (click)="volver()">Volver</button>
+
+  <!-- Título -->
+  <h2>Historial de Adquisiciones</h2>
+
+  <!-- Tabla de Historial -->
+  <div class="table-container">
+    <table>
+      <thead>
+        <tr>
+          <th>No.</th>
+          <th>Fecha de Modificación</th>
+          <th>Campo Modificado</th>
+          <th>Modificado por</th>
+          <th>Valor Anterior</th>
+          <th>Valor Nuevo</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngIf="(historial$ | async)?.length === 0">
+          <td colspan="5" class="sin-registros">No hay cambios registrados en esta adquisición.</td>
+        </tr>
+        <tr *ngFor="let cambio of historial$ | async;let i = index">
+          <td>{{ i + 1 }}</td>
+          <td>{{ cambio.fechaCambio | date: 'dd/MM/yyyy HH:mm' }}</td>
+          <td>{{ cambio.campoModificado }}</td>
+          <td>{{ cambio.modificadoPor }}</td>
+          <td>{{ cambio.valorAnterior }}</td>
+          <td>{{ cambio.valorNuevo }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

@@ -1,0 +1,84 @@
+<div class="page-container">
+  <!-- Botón de Volver -->
+  <button class="btn btn-primary volver-btn" (click)="volver()">Volver</button>
+
+  <!-- Título -->
+  <h2>Adquisiciones</h2>
+
+  <!-- Formulario de Adquisición -->
+  <form [formGroup]="form" (ngSubmit)="onSubmit()" class="form-container">
+    <div class="form-grid">
+      <!-- Presupuesto -->
+      <div class="form-group">
+        <label for="presupuesto">Presupuesto:</label>
+        <input id="presupuesto" type="number" formControlName="presupuesto" placeholder="Monto asignado" required  />
+        <div class="error" *ngIf="form.get('presupuesto')?.invalid && form.get('presupuesto')?.touched">
+          * Este campo es obligatorio
+        </div>
+      </div>
+
+      <!-- Unidad -->
+      <div class="form-group">
+        <label for="unidadAdministrativa">Unidad Administrativa:</label>
+        <input id="unidadAdministrativa" type="text" formControlName="unidadAdministrativa" placeholder="Administrativa responsable" required />
+        <div class="error" *ngIf="form.get('unidadAdministrativa')?.invalid && form.get('unidadAdministrativa')?.touched">
+          * Este campo es obligatorio
+        </div>
+      </div>
+
+      <!-- Tipo de bien o servicio -->
+      <div class="form-group">
+        <label for="tipoBienServicio">Tipo de Bien o Servicio:</label>
+        <input id="tipoBienServicio" type="text" formControlName="tipoBienServicio" placeholder="Descripción" required />
+        <div class="error" *ngIf="form.get('tipoBienServicio')?.invalid && form.get('tipoBienServicio')?.touched">
+          * Este campo es obligatorio
+        </div>
+      </div>
+
+      <!-- Cantidad -->
+      <div class="form-group">
+        <label for="cantidad">Cantidad:</label>
+        <input id="cantidad" type="number" formControlName="cantidad" placeholder="Número de unidades" />
+      </div>
+
+      <!-- Valor Unitario -->
+      <div class="form-group">
+        <label for="valorUnitario">Valor Unitario:</label>
+        <input id="valorUnitario" type="number" formControlName="valorUnitario" placeholder="Costo por unidad" />
+      </div>
+
+      <!-- Valor Total -->
+      <div class="form-group">
+        <label for="valorTotal">Valor Total:</label>
+        <input id="valorTotal" type="number" formControlName="valorTotal" placeholder="Costo total" />
+      </div>
+
+      <!-- Fecha de adquisición -->
+      <div class="form-group">
+        <label for="fechaAdquisicion">Fecha de adquisición:</label>
+        <div class="input-icon">
+          <input id="fechaAdquisicion" type="date" formControlName="fechaAdquisicion" />
+          <mat-icon class="icon">calendar_today</mat-icon>
+        </div>
+      </div>
+
+      <!-- Proveedor -->
+      <div class="form-group">
+        <label for="proveedor">Proveedor:</label>
+        <input id="proveedor" type="text" formControlName="proveedor" placeholder="Entidad proveedora" />
+      </div>
+
+      <!-- Documentación -->
+      <div class="form-group full-width">
+        <label for="documentacion">Documentación:</label>
+        <textarea id="documentacion" formControlName="documentacion" placeholder="Detalles como órdenes de compra, facturas, etc."></textarea>
+      </div>
+    </div>
+
+    <!-- Botón de Crear -->
+    <button type="submit" id="enviarForm" class="btn btn-primary" [disabled]="form.invalid">{{ isEditMode ? 'Actualizar' : 'Guardar' }}</button>
+
+    <!-- Mensaje de éxito -->
+    <p *ngIf="adquisicionCreada" class="success-message">{{ isEditMode ? '¡Su adquisición ha sido actualizada con éxito!' : '¡Su adquisición ha sido creada con éxito!' }}</p>
+  </form>
+</div>

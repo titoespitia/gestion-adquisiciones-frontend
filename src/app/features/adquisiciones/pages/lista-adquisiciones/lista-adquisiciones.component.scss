@@ -1,0 +1,117 @@
+/* Fondo degradado */
+.page-container {
+  text-align: left;
+  padding: 80px;
+  background: linear-gradient(to bottom, #cce5ff, #ffffff);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+/* Botón de volver */
+.volver-btn {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+}
+
+/* Título */
+h2 {
+  font-size: 35px;
+  font-weight: bold;
+  color: #004aad;
+  margin-bottom: 25px;
+}
+
+/* Contenedor de filtros */
+.filters-container {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.filters-container input, .filters-container select {
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+}
+
+
+/* 🏗️ Contenedor de la tabla */
+.table-container {
+  margin-top: 30px;
+  display: flex;
+  justify-content: center;
+}
+
+/* 📊 Estilos de la tabla */
+table {
+  width: 90%;
+  border-collapse: collapse;
+  background: white;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+/* 🔹 Encabezados de la tabla */
+th {
+  background-color: #004aad;
+  color: white;
+  padding: 12px;
+  font-weight: bold;
+  font-size: 14px;
+  text-align: center;
+}
+
+/* 🔲 Celdas */
+td {
+  padding: 12px;
+  font-size: 14px;
+  text-align: center;
+  border-bottom: 1px solid #ddd;
+}
+
+/* 🟦 Alternar colores en filas */
+tbody tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+
+/* Botones de acciones */
+.acciones {
+  display: flex;
+  gap: 5px;
+  justify-content: center;
+}
+
+/* Tamaño de los iconos */
+.mat-icon {
+  font-size: 25px !important;
+  color: #004aad;
+}
+
+/* Colores de los iconos según estado */
+.activo {
+  .mat-icon {
+    font-size: 25px !important;
+    color: #004aad !important; /* Azul (Activo) */
+  }
+}
+
+.inactivo {
+  .mat-icon {
+    font-size: 25px !important;
+    color: #6c757d !important; /* Gris oscuro (Inactivo) */
+  }
+}
+
+/* Ajuste de los botones */
+.mat-icon-button {
+  width: 36px !important;
+  height: 36px !important;
+  background: white;
+  border-radius: 50%;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}

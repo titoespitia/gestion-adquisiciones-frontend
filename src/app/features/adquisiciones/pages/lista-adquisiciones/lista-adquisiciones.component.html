@@ -1,0 +1,68 @@
+<div class="page-container">
+  <!-- Botón de Volver -->
+  <button class="btn btn-primary volver-btn" (click)="volver()">Volver</button>
+
+  <!-- Título -->
+  <h2>Gestionar adquisiciones</h2>
+
+
+  <!-- Tabla de adquisiciones -->
+  <div class="table-wrapper">
+    <table class="table">
+      <thead>
+        <tr>
+          <th>No.</th>
+          <th>Presupuesto</th>
+          <th>Unidad</th>
+          <th>Tipo de bien o servicio</th>
+          <th>Cantidad</th>
+          <th>Valor Unt</th>
+          <th>Valor Total</th>
+          <th>Fecha de Adquisición</th>
+          <th>Proveedor</th>
+          <th>Documentación</th>
+          <th>Acciones</th>
+        </tr>
+        <!-- Filtros por columna -->
+        <tr>
+          <th></th>
+          <th><input type="text" placeholder="Filtrar" [(ngModel)]="filtros.presupuesto" (input)="filtrarAdquisiciones()" /></th>
+          <th><input type="text" placeholder="Filtrar" [(ngModel)]="filtros.unidadAdministrativa" (input)="filtrarAdquisiciones()" /></th>
+          <th><input type="text" placeholder="Filtrar" [(ngModel)]="filtros.tipoBienServicio" (input)="filtrarAdquisiciones()" /></th>
+          <th><input type="number" placeholder="Filtrar" [(ngModel)]="filtros.cantidad" (input)="filtrarAdquisiciones()" /></th>
+          <th><input type="number" placeholder="Filtrar" [(ngModel)]="filtros.valorUnitario" (input)="filtrarAdquisiciones()" /></th>
+          <th></th>
+          <th><input type="date" [(ngModel)]="filtros.fechaAdquisicion" (input)="filtrarAdquisiciones()" /></th>
+          <th><input type="text" placeholder="Filtrar" [(ngModel)]="filtros.proveedor" (input)="filtrarAdquisiciones()" /></th>
+          <th></th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let adquisicion of adquisicionesFiltradas; let i = index">
+          <td>{{ i + 1 }}</td>
+          <td>{{ adquisicion.presupuesto | currency }}</td>
+          <td>{{ adquisicion.unidadAdministrativa }}</td>
+          <td>{{ adquisicion.tipoBienServicio }}</td>
+          <td>{{ adquisicion.cantidad | number }}</td>
+          <td>{{ adquisicion.valorUnitario | currency }}</td>
+          <td>{{ adquisicion.valorTotal | currency }}</td>
+          <td>{{ adquisicion.fechaAdquisicion | date: 'longDate' }}</td>
+          <td>{{ adquisicion.proveedor }}</td>
+          <td>{{ adquisicion.documentacion }}</td>
+          <td class="acciones">
+            <button mat-icon-button [ngClass]="{'activo': adquisicion.activo, 'inactivo': !adquisicion.activo}" color="primary" (click)="editarAdquisicion(adquisicion.id)" matTooltip="Editar" [disabled]="!adquisicion.activo">
+              <mat-icon>edit</mat-icon>
+            </button>
+            <button mat-icon-button [ngClass]="{'activo': adquisicion.activo, 'inactivo': !adquisicion.activo}" color="accent" (click)="desactivarAdquisicion(adquisicion.id)" matTooltip="Desactivar" [disabled]="!adquisicion.activo">
+              <mat-icon>{{ adquisicion.activo ? 'toggle_on' : 'toggle_off' }}</mat-icon>
+            </button>
+            <button mat-icon-button color="warn" (click)="verHistorial(adquisicion.id)" matTooltip="Ver Historial">
+              <mat-icon>history</mat-icon>
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

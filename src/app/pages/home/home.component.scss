@@ -1,0 +1,94 @@
+.home-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 100vh;
+  padding: 40px;
+  background: linear-gradient(355deg, #166ec5da 20%, #e6f7ff 80%);
+  text-align: left;
+}
+
+/* Estilo del logo con efecto de recorte */
+.logo {
+  position: absolute;
+  top: 40px;
+  left: 120px;
+}
+
+.logo img {
+  width: 120px;
+  height: auto;
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: 5px;
+  border-radius: 10px;
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Estilo del contenido de texto */
+.content {
+  max-width: 800px;
+  margin-left: 5%;
+}
+
+h1 {
+  font-size: 90px;
+  font-weight: bold;
+  color: #03367a;
+  margin-bottom: 20px;
+}
+
+/* Estilos de los botones */
+.buttons {
+  display: flex;
+  gap: 25px;
+}
+
+.btn {
+  padding: 14px 60px;
+  font-size: 1.2rem;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-weight: bold;
+}
+
+.btn-primary {
+  background-color: #004aad;
+  color: white;
+}
+
+.btn-primary:hover {
+  background-color: #002244;
+}
+
+.btn-secondary {
+  background-color: #b0c4de;
+  color: white;
+}
+
+.btn-secondary:hover {
+  background-color: #8ea6c9;
+}
+
+/* Estilos de la imagen con efecto de recorte */
+.image-container {
+  position: relative;
+  width: 500px;
+  height: 400px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 10%;
+}
+
+
+/* Efecto de recorte con formas */
+.overlay-shape {
+  position: absolute;
+  width: 120%;
+  height: 120%;
+  background: rgba(255, 255, 255, 0.25);
+  clip-path: polygon(20% 0, 100% 0, 80% 100%, 0 100%);
+  z-index: -1;
+}
