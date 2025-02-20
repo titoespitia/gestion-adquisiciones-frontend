@@ -22,7 +22,7 @@ Luego, sigue estos pasos:
 1.  **Clona el repositorio:**
 
     ```bash
-    git clone https://github.com/titoespitia/GestionAdquisicionesFrontend.git
+    git clone https://github.com/titoespitia/gestion-adquisiciones-frontend.git
     cd gestion-adquisiciones-frontend
     ```
 
